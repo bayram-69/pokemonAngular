@@ -1,0 +1,13 @@
+.title {
+    text-align: center;
+    color: #FFCB05;
+    -webkit-text-stroke: 1px rgb(18, 50, 167);
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 3rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .title {
+      font-size: 5rem;
+    }
+  }

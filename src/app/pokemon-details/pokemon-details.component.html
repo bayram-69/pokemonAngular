@@ -1,0 +1,12 @@
+<div class="pokemon-details-container">
+  <h2 class="title">{{ pokemon.name }}</h2>
+  <div class="pokemon-details">
+    <p class="PV">HP {{ pokemon.stats.HP }}</p>
+    <p class="PV">Attack {{ pokemon.stats.attack }}</p>
+    <p class="PV">Defense {{ pokemon.stats.defense }}</p>
+    <p class="PV">Speed {{ pokemon.stats.speed }}</p>
+  </div>
+  <div class="image">
+    <img src="{{ pokemon.image }}" alt="{{ pokemon.name }} image" />
+  </div>
+</div>

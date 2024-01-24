@@ -1,0 +1,14 @@
+<ul class="pokemon-list">
+  @for( post of data; track post.id){
+  <li class="pokemon-item">
+    <div class="pokemon-container" (click)="goToPokemonDetails(post.id)">
+      <img
+        src="{{ post.image }}"
+        alt="{{ post.name }} image"
+        class="pokemon-image"
+      />
+      <p class="pokemon-name">{{ post.name }}</p>
+    </div>
+  </li>
+  }
+</ul>
