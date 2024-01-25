@@ -4,13 +4,16 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
 import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
-    {
-        path: '', component: PokemonListComponent,
-    },
-    {
-        path:  'pokemon/:id', component: PokemonDetailsComponent,
-    },
-    {
-        path: "**", component: NotFoundComponent,
-    },
+  {
+    path: '',
+    component: PokemonListComponent,
+  },
+  {
+    path: 'pokemon/:id',
+    component: PokemonDetailsComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
+  },
 ];
