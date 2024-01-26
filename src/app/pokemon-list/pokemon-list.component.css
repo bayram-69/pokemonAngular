@@ -48,7 +48,7 @@
 
 .pokemon-image {
   width: 100px; 
-  animation: bounce 3s infinite;
+  animation: bounce 2s infinite;
 }
 
 @media only screen and (min-width: 768px) {

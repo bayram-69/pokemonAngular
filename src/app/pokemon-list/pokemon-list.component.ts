@@ -2,15 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+interface Pokemon {
+  id: number;
+  name: string;
+  image: string;
+}
+
 @Component({
   selector: 'app-pokemon-list',
-  standalone: true,
-  imports: [],
   templateUrl: './pokemon-list.component.html',
-  styleUrl: './pokemon-list.component.css',
+  styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent implements OnInit {
-  data: any[] = [];
+  data: Pokemon[] = [];
+  private apiURL: string = 'https://pokebuildapi.fr/api/v1/pokemon/limit/100';
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
@@ -18,10 +23,8 @@ export class PokemonListComponent implements OnInit {
     this.fetchData();
   }
 
-  private apiURL: string = 'https://pokebuildapi.fr/api/v1/pokemon/limit/100';
-
-  fetchData() {
-    this.httpClient.get(this.apiURL).subscribe((data: any) => {
+  fetchData(): void {
+    this.httpClient.get<Pokemon[]>(this.apiURL).subscribe((data) => {
       this.data = data;
     });
   }
@@ -29,8 +32,12 @@ export class PokemonListComponent implements OnInit {
   goToPokemonDetails(id: number): void {
     const currentPokemon = this.data.find((p) => p.id === id);
 
-    this.router.navigate(['/pokemon', id], {
-      state: { pokemon: currentPokemon },
-    });
+    if (currentPokemon) {
+      this.router.navigate(['/pokemon', id], {
+        state: { pokemon: currentPokemon },
+      });
+    } else {
+      console.error(`Pokemon with id ${id} not found.`);
+    }
   }
 }
