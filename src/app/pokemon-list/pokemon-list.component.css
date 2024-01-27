@@ -18,7 +18,7 @@
     border: 1px solid black;
     padding: 1rem; 
     text-align: center; 
-    width: 18rem;
+    width: 13rem;
     border-radius: 1rem;
     background: #3466AF;
     display: flex;
@@ -53,7 +53,7 @@
 
 @media only screen and (min-width: 768px) {
 .pokemon-container{
-  width: 30rem;
+  width: 25rem;
 }
 
 .pokemon-image {

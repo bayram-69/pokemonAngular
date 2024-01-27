@@ -3,7 +3,7 @@
   border-radius: 1rem;
   margin: 2rem;
   padding: 2rem;
-  width: 22rem;
+  width: 16rem;
   background-color: #FFCB05;
 }
 
@@ -56,7 +56,7 @@
       }
 
       .pokemon-details-container {
-        width: 30rem;
+        width: 25rem;
       }
 
       .PV {
